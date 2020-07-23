@@ -1,0 +1,80 @@
+---
+title: "R Basics: Session 2"
+output: html_notebook
+---
+
+---------
+Matrices
+---------
+
+```{r}
+matrix(1:9, byrow = TRUE, nrow = 3)
+```
+
+```{r}
+# Box office Star Wars (in millions)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# combine the 3 vectors into one
+box_office <- c(new_hope, empire_strikes, return_jedi)
+
+# construct the star_wars matrix
+star_wars_matrix <- matrix(box_office, byrow = TRUE, nrow = 3)
+
+region <- c("US", "non-US")
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+
+#Name the columns and rows with region and title
+colnames(star_wars_matrix) <- region
+rownames(star_wars_matrix) <- titles
+
+star_wars_matrix
+```
+
+```{r}
+# calculate worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+worldwide_vector
+```
+
+```{r}
+# bind the new variable worldwide_vector as a column to star wars matrix
+all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
+all_wars_matrix
+```
+Adding more data into our matrix
+
+```{r}
+the_phantom_menace <- c(474.5, 552.5)
+attack_of_the_clones <- c(310.7, 338.7)
+revenge_of_the_sith <- c(380.3, 468.5)
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

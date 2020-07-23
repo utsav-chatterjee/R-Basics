@@ -1,0 +1,166 @@
+---
+title: "R Basics: Session 1"
+output: html_notebook
+---
+
+
+
+```{r}
+5+5
+```
+```{r}
+# Assign a value to variable x
+x <- 42
+y <- 5
+
+x + y
+```
+
+
+```{r}
+logical_variable = TRUE
+class(logical_variable)
+```
+
+<h4>Vectors</h4>
+```{r}
+num_vector <- c(1, 10, 49)
+char_vector <- c("a", "c", "e")
+bool_vector <- c(TRUE, FALSE, TRUE)
+
+num_vector
+char_vector
+bool_vector
+```
+
+
+```{r}
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+poker_vector
+roulette_vector
+
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+poker_vector
+roulette_vector
+
+```
+
+
+```{r}
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+poker_vector
+roulette_vector
+```
+
+- How much has been your overall profit or loss per day of the week?
+- Have you lost money over the week in total?
+- Are you winning/losing money on poker or on roulette?
+
+
+```{r}
+# How much did you win/lose in each day
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+total_daily <- poker_vector + roulette_vector
+
+total_daily 
+```
+
+
+```{r}
+# Total winning with poker
+poker_vector
+
+total_poker <- sum(poker_vector)
+total_poker
+
+```
+
+```{r}
+# Total winning with roulette
+roulette_vector
+
+total_roulette <- sum(roulette_vector)
+total_roulette
+```
+
+```{r}
+total_poker > total_roulette
+```
+
+```{r}
+total_week <- total_poker + total_roulette
+total_week
+```
+
+```{r}
+poker_vector
+poker_wednesday <- poker_vector[3]
+poker_wednesday
+```
+
+```{r}
+poker_midweek <- poker_vector[c(2,3,4)]
+poker_midweek
+```
+```{r}
+roulette_selection_vector <- roulette_vector[2:4]
+roulette_selection_vector
+```
+
+
+```{r}
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+```
+
+```{r}
+poker_select_data <- poker_vector[c("Monday", "Wednesday", "Friday")]
+mean(poker_select_data)
+
+```
+
+```{r}
+selection_vector <- poker_vector < 0
+poker_vector[selection_vector]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
